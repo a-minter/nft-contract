@@ -1,0 +1,58 @@
+{
+  "name": "nft-on-chain",
+  "developer": {
+    "archwayd": {
+      "docker": true
+    },
+    "scripts": {
+      "test": "cargo unit-test",
+      "build": "cargo build",
+      "optimize": "cargo run-script optimize",
+      "wasm": "cargo wasm",
+      "query": "archwayd query wasm",
+      "tx": "archwayd tx wasm execute"
+    },
+    "deployments": [
+      {
+        "type": "instantiate",
+        "chainId": "torii-1",
+        "codeId": 49270,
+        "address": "archway1vrhksyqn38ptd2srpjwe9tdevg60f7hexjsd6larndvn0u50e0wsvcjuzj",
+        "admin": "archway1fdpx9qggcttjn60uusyytf5glq976p3z6cx4fh"
+      },
+      {
+        "type": "create",
+        "chainId": "torii-1",
+        "codeId": 49270
+      }
+    ]
+  },
+  "network": {
+    "name": "torii",
+    "chainId": "torii-1",
+    "type": "testnet",
+    "fees": {
+      "feeDenom": "utorii"
+    },
+    "gas": {
+      "prices": "0.002utorii",
+      "mode": "auto",
+      "adjustment": "1.3"
+    },
+    "wasm": {
+      "bech32Hrp": "archway",
+      "archwayd": "0.0.4",
+      "configDir": ".archway",
+      "binary": "archwayd"
+    },
+    "urls": {
+      "rpc": {
+        "url": "https://rpc.torii-1.archway.tech",
+        "port": 443
+      },
+      "faucets": [
+        "https://faucet.constantine-1.archway.tech"
+      ]
+    }
+  }
+}

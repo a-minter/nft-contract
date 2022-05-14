@@ -1,0 +1,1 @@
+b493a0cd08b03afe0557f4bae5add7fc1a266d30141770b59d6afe958b4e6476  ./target/wasm32-unknown-unknown/release/nft_on_chain.wasm
